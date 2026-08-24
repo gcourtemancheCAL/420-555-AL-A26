@@ -102,5 +102,7 @@ La _puissance électrique_ est le taux, par unité de temps, auquel l'énergie _
 ## Liens utiles
 
 URL : [Circuits Circuits électriques : lois élémentaires pour la tension et le courant](https://www.youtube.com/watch?v=m4jzgqZu-4s) (10 min)
+
 URL : [énergie et puissance des batteries](https://www.youtube.com/watch?v=u4FpbaMW5sk) (10 min)
+
 URL : [Risques](https://www.youtube.com/watch?v=LHIfrX5dIwg) (5 min)
