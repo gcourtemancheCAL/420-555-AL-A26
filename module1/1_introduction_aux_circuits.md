@@ -29,13 +29,13 @@ Dans le cas contraire, on va parler d'un circuit ouvert. Des composants tel un *
 
 Lorsque le circuit est ouvert, le courant **n'y circule pas**. Le courant circule uniquement lorsque le circuit est **fermé**.
 
-**Circuit avec bouton poussoir : **
+**Circuit avec bouton poussoir :**
 
 <img src="img/Pasted image 20260817092730.png" width="400" />
 
 Le circuit est dit `ouvert` jusqu'à ce que quelqu'un appuie sur le bouton. Tant que le bouton est appuyé, le circuit est `fermé`
 
-**Circuit avec interrupteur : **
+**Circuit avec interrupteur :**
 
 <img src="img/Pasted image 20260817095104.png" width="400" />
 

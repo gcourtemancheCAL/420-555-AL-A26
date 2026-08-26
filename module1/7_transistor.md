@@ -28,16 +28,18 @@ Bien entendu, l'ensemble de l'oeuvre va se balancer sur l'ensemble des composant
 
 ### Exemple 1
 
-<img src="img/Pasted image 20260820132900.png" width="400" />
+<img src="img/Pasted image 20260824150739.png" width="400" />
 
 On peut estimer certains paramètres du circuit ainsi : 
 
 ```
-V_e = V_b - 0.7, V_e = 0 puisque connecté au ground.
-Donc V_b = 0.7V
-Donc V en R_v = 3.0V - 0.7V = 2.3V.
-Donc I en R_v = 2.3V/10kΩ = 0.23mA
-I_E = (β + 1) x 0.23mA = 23.23mA  
+V_e = 0
+V_b = 0.7
+V_R2 = 2.3
+
+I_R2 = 0.115mA
+I_e = 101 * 0.115 = 11.615mA
+I_c = 100 * 0.115 = 11.5mA
 ```
 
 ### Exemple 2
@@ -63,6 +65,11 @@ I_e  = 101I_rb = 0.021 * 101 = 2.12mA
 2.12mA ≈ 2.09mA => La différence provient de mes arrondissements
 ```
 
+### Exemple 3
+
+<img src="img/Pasted image 20260825130738.png" width="600" />
+
+**On le fait ensemble!**
 
 ## Mode Saturation
 
@@ -73,3 +80,33 @@ Dans ce mode, le courant en C n'est pas pratiquement plus contrôlé par le cour
 Le mode saturation est atteint lorsque `V_B > V_C && V_B > V_E && V_BE > V_th` où V_th est un seuil propre au transistor (généralement notre 0.7V). 
 
 <img src="img/mode_saturation-model.png" width="300" />
+
+**Exemple :**
+
+<img src="img/Pasted image 20260824132427.png" width="400" />
+
+```
+
+# On commence en testant en prenant pour acquis que le transistor se comporte en
+# mode actif. Si les maths ne mathent pas, on test avec le mode saturation
+
+V_e = V_b - 0.7 = 0 # Connecté directement au ground
+V_b = V_e + 0.7 = 0.7
+V_R2 = 3 - V_b = 2.3
+I_b = 2.3/10000  = 0.23mA
+I_e = 101 * 0.23mA = 23.23mA
+I_c = 23mA
+
+V_R1 = 23mA * 500mA = 11.5V !!! -> Dépasse le 5V en C
+
+# Les maths ne mathent pas - on regarde si le modèle de saturation est réaliste
+
+V_ce = V_e + 0.2 = 0.2V
+I_R1 = 4.8 / 500 = 9.6mA
+
+V_be = 0.7
+I_R2 = 0.23mA
+
+I_E = 9.83mA
+
+```
