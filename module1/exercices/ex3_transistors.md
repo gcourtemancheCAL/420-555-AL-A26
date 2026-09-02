@@ -5,8 +5,8 @@
 Reproduisez le circuit suivant. Utilisez une résistance de 220Ω afin de limiter le courant qui passe à travers la DEL.
 
 1. Fermer le circuit à l'aide de vos doigts. La DEL devrait s'allumer.
-2. Quelle est la tension à C?
-3. Si vous connectez la base du transistor directement au 5 volt de votre alimentation la DEL ne devrait pas s'allumer. Formulez une hypothèse expliquant ce comportement.
+2. Si vous touchez les fils directement ensemble (la base du transistor et la connexion 5 volt), la DEL ne devrait pas s'allumer. Formulez une hypothèse expliquant ce comportement. **IMPORTANT** Ne gardez pas la base connecter trop longtemps directement à l'alimentation - cela pourrait briser le transistor.
+
 
 <img src="img/Pasted image 20260820112029.png" width="300" />
 
@@ -14,13 +14,9 @@ Reproduisez le circuit suivant. Utilisez une résistance de 220Ω afin de limite
 
 Modifiez le circuit ainsi : 
 
-<img src="img/Pasted image 20260820160512.png" width="300" />
+<img src="img/Pasted image 20260901113437.png" width="300" />
 
-La deuxième DEL devrait s'allumer. Votre hypothèse explique-t-elle aussi ce phénomène? 
-
-1. Calculez la tension en E.
-2. Calculez le courant traversant la résistance. Quelle part de ce courant provient du collecteur?
-
+La deuxième DEL devrait s'allumer lorsque vous appuyez sur le bouton. Votre hypothèse explique-t-elle aussi ce phénomène? 
 ## Question 2
 
 Le circuit suivant utilise un transistor NPN et une photorésistance afin de contrôler le volume et la fréquence d'un buzzer. 
@@ -31,7 +27,5 @@ En passant vos mains devant la photorésistance - et en créant ainsi de l'ombre
 
 1. La valeur de la photorésistance monte elle ou descend elle avec la luminosité? Comment le valider?
 2. Quel est le rôle du transistor dans ce circuit?
-3. Si l'interrupteur est en position ouverte, est-ce que du courant passe par le buzzer?
-4. Quelle est la consommation de courant lorsque l'interrupteur est en position ouverte? 
-	1. En assumant une charge de 600mAh, pendant combien de temps votre batterie garderait sa charge?
-5. Produisez sur KiCad un plan de circuit modifier qui pourrait garder sa charger "infiniment" lorsque l'interrupteur est ouvert. 
+3. Si l'interrupteur est en position ouverte, est-ce que du courant passe par votre circuit?
+4. Produisez sur KiCad un plan de circuit modifié qui pourrait garder sa charger "infiniment" lorsque l'interrupteur est ouvert. 
