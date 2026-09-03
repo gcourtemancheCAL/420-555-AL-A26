@@ -12,7 +12,7 @@ Les broches supportent 2 modes :
 
 **Exemple avec API arduino :**
 
-```c++
+```cpp
 int pin {2}; // Les variables globales sont en DRAM
 const int timeout_ms { 1000 }; // Les constantes sont en memoire flash.
 
@@ -31,20 +31,6 @@ void loop() {
 ```
 
 [API arduino](https://docs.arduino.cc/language-reference/)
-
-### Écriture
-
-#### digitalWrite
-
-#### PWM
-
-#### Tone
-
-### Lecture 
-
-#### Pullup et pulldown
-
-#### 
 
 ### Configuration de la console
 

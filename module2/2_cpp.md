@@ -68,7 +68,7 @@ Et les variantes non signés :
 
 Sensiblement la même chose qu'en java : 
 
-```c++
+```cpp
 
 int i = 0;
 
@@ -94,7 +94,7 @@ while( condition ) {
 
 ### Fonctions
 
-```c++
+```cpp
 
 // Sensiblement comme d'autres langages
 int ma_fonction(int arg1, int arg2) {
@@ -104,7 +104,7 @@ int ma_fonction(int arg1, int arg2) {
 
 >[!warning] Les fonctions doivent avoir été déclarées avant leur utilisation.
 
-```c++
+```cpp
 
 void a() {
 }
@@ -133,7 +133,7 @@ void d() {
 
 ### Objets et classes
 
-```c++
+```cpp
 
 void exemple()
 {
@@ -152,7 +152,7 @@ void exemple()
 
 Attention à `new` : 
 
-```c++
+```cpp
 void exemple2()
 {
 	// new cree l'object sur le heap. la string va continuer a exister 
@@ -170,6 +170,8 @@ void exemple2()
 }
 ```
 
+[Informations supplémentaires sur les classes](https://cplusplus.com/doc/tutorial/classes/)
+
 ## Pointeurs
 
 [Plus d'info](https://web.maths.unsw.edu.au/~lafaye/CCM/cpp/cpppoint.htm)
@@ -180,3 +182,9 @@ void exemple2()
 Limite stack : environ 4Kio.
 Limite DRAM : environ 50-80Kio.
 Limite IRAM : environ 64Kio.
+
+## Godbolt
+
+[Liens vers Godbolt](http://www.godbolt.org)
+
+Compilateur en ligne permettant de rapidement tester du code et de voir l'assembleur généré.
