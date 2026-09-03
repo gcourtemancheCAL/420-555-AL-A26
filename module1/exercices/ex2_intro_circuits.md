@@ -17,7 +17,7 @@ Reproduisez ce circuit sur votre platine d'essai.
 
 ### Question 2.1
 
-En théorie, combien de LEDs rouge pouvez-vous connecter en série sur une batterie de 9 volts avant qu’elles ne brillent plus? Combien de LEDs vertes? Expliquez votre raisonnement.
+En théorie, combien de LEDs rouge pouvez-vous connecter en série sur une batterie de 5 volts avant qu’elles ne brillent plus? Combien de LEDs vertes? Expliquez votre raisonnement.
 
 ### Question 2.2
 
