@@ -22,7 +22,7 @@ Pour cet exercice vous devrez réalisé le circuit suivant :
 - Le nombre de DEL allumé doit correspondre à la valeur du compteur.
 - Lorsqu'on dépasse 3, on recommence à zéro.
 
-![[Pasted image 20260903092429.png]]
+<img src="img/Pasted image 20260903092429.png" width="500" />
 
 Commencez en faisant le schéma de votre circuit sur KiCad. 
 
@@ -48,7 +48,7 @@ Nous allons faire un piano à 3 touches.
 
 Le schéma suivant est une approximation du circuit que vous avez à faire : 
 
-![[Pasted image 20260903095323.png]]
+<img src="img/Pasted image 20260903095323.png" width="500" />
 
 **Attention  :**
 - Une grosse erreur est répétée. Identifiez cette erreur et corrigez là.
