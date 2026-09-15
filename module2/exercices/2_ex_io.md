@@ -30,7 +30,7 @@ Ensuite, faites le sur votre platine d'essai et programmez votre ESP.
 
 ## Exercice 3
 
-Nous allons reprendre à partir de l'[Exercice 5.3 des exercices précédents](./1_ex_intro_esp)
+Nous allons reprendre à partir de l'[Exercice 5.3 des exercices précédents](./1_ex_intro_esp.md#exercice-53)
 
 Cette fois ci, nous allons vouloir deux animations différentes ainsi qu'un interrupteur qui nous permette d'identifier quelle animation jouer.
 
