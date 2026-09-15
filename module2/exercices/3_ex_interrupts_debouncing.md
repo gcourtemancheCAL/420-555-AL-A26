@@ -55,7 +55,7 @@ attachInterrupt(digitalPinToInterrupt(pin), [this]() IRAM_ATTR {
 
 ## Exercice 2
 
-Reprenez l'exercice <a href="2_ex_io.md#Exercice 2">2_ex_io::exercice 2</a>. Cette fois-ci, utilisez votre classe de DebouncedInput. 
+Reprenez l'exercice <a href="2_ex_io.md#exercice-2">2_ex_io::exercice 2</a>. Cette fois-ci, utilisez votre classe de DebouncedInput. 
 
 ## Exercice 
 
