@@ -21,7 +21,7 @@ En théorie, combien de LEDs rouge pouvez-vous connecter en série sur une batte
 
 ### Question 2.2
 
-Testez sur votre platine d'essai.
+Testez sur votre platine d'essai.m
 
 ## Question 3
 

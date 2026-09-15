@@ -170,12 +170,65 @@ void exemple2()
 }
 ```
 
+#### Définir une classe
+
+
+```cpp
+// Déclaration de la classe.
+class MaClasse {
+
+// Ce qui suit est publique
+public:
+	// Constructeur
+	MaClasse();
+	
+	// Destructeur
+	~MaClasse();
+	
+	// Constructeur par copie. On prend l'impl par defaut.
+	// Pas obligatoire
+	MaClasse(const MaClasse& rhs) = default;
+	
+	// Operateur de copie
+	MaClasse& operator=(const MaClasse& rhs) = default;
+	
+	// Il y a aussi des variantes pour des opérations de type move mais
+	// on ve pas rentrer dans ce niveau de détails
+	MaClasse(MaClasse&& rhs) = default;
+	MaClasse& operator=(MaClasse&& rhs) = default;
+	
+	int maFonction()
+
+// Ce qui suit est privé
+private:
+	
+// On peut alterner comme on veut
+public:
+
+}
+
+void exemple2()
+{
+	// new cree l'object sur le heap. la string va continuer a exister 
+	// apres avoir quitter la fonction mais elle risque de ne plus etre 
+	// accessible.
+	std::string *str = new std::string {"le texte de ma string"};
+	
+	// On utilise la notation en fleche pour appeler une fonction via un 
+	// pointeur.
+	str->size() == 21;
+	
+	// On n'oublie pas de supprimer les pointeurs apres en avoir termine.
+	delete str;
+	str = nullptr;
+}
+```
+
 [Informations supplémentaires sur les classes](https://cplusplus.com/doc/tutorial/classes/)
 
 ## Pointeurs
 
 [Plus d'info](https://web.maths.unsw.edu.au/~lafaye/CCM/cpp/cpppoint.htm)
-
 
 ## Heap et stack
 

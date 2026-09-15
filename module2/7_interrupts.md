@@ -104,7 +104,7 @@ void loop() {
 }
 ```
 
-![[Pasted image 20260903142827.png]]
+<img src="img/Pasted image 20260903142827.png" width="500" />
 
 **Reproduisez le circuit suivant et testez votre interrupt. Que remarquez-vous?**
 

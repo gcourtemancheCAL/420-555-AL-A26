@@ -6,17 +6,36 @@
 Le GPIO doit être configuré en mode INPUT au setup : 
 
 ```arduino
-void setup() {  pinMode(13, INPUT);    // Sets the digital pin 13 as output}
+void setup() {  
+	pinMode(13, INPUT);    // Sets the digital pin 13 as output
+}
 ```
 
 Il existe aussi le mode INPUT_PULLUP qui va automatiquement configuré une résistance tirant le broche vers le haut. 
 
 ```arduino
-void setup() {  pinMode(13, INPUT_PULLUP);    // Sets the digital pin 13 as output}
+void setup() {  
+	pinMode(13, INPUT_PULLUP);    // Sets the digital pin 13 as output
+}
 ```
 
 ## Lecture de l'état de la broche
 
+```arduino
+int ledPin = 13;  // LED connected to digital pin 13
+int inPin = 7;    // pushbutton connected to digital pin 7
+int val = 0;      // variable to store the read value
+
+void setup() {  
+	pinMode(ledPin, OUTPUT);  // sets the digital pin 13 as output
+	pinMode(inPin, INPUT);    // sets the digital pin 7 as input
+}
+
+void loop() {  
+	val = digitalRead(inPin);   // read the input pin  
+	digitalWrite(ledPin, val);  // sets the LED to the button's value
+}
+```
 
 ## Pullup et pulldown
 
@@ -31,18 +50,20 @@ Une pratique commune consiste à relier la broche en lecture au `GND` ou au `VCC
 Ce lien est fait à l'aide d'une résistance. On va souvent utiliser une résistance de 10kΩ.  
 
 Lorsqu'une broche de lecture n'est ni tiré vers le bas, ni tiré vers le haut nous disons qu'elle est **flottante**. Le résultat d'une lecture sur une broche **flottante** est imprévisible. C'est une mauvaise chose.
+
 ### pulldown
 
-![[Pasted image 20260902160940.png]]
+<img src="img/Pasted image 20260902160940.png" width="500" />
 
 Une résistance de 10kΩ est utilisé devant le `GND` et une résistance de 1kΩ suit le bouton.
 
 En temps normal : la tension en D4 est tiré vers le 0V.
 
 Lorsque l'on appuie sur le bouton : La tension en D4 monte. Le signal détecté est `HIGH`.
+
 ### pullup
 
-![[Pasted image 20260902162746.png]]
+<img src="img/Pasted image 20260902162746.png" width="500" />
 
 Une résistance de 10kΩ est utilisé devant le après le 3.3V, et une résistance de 1kΩ précède le bouton.
 

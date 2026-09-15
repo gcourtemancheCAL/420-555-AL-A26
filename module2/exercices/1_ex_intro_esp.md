@@ -92,9 +92,9 @@ Vous allez devoir programmer votre esp8266 de sorte à jouer ce morceau musical 
 
 ## Exercice 5 - DEL RGB
 
-Une vieille légende Cherokee stipule que deux loups vivent en vous  : le premier est noirceur et désespoir, le deuxième est un sick gamer 1337 avec un setup de DEL RGB épique.
+Une vieille légende Cherokee stipule que deux loups vivent en vous  : le premier est noirceur et désespoir, le deuxième est un gamer 1337 avec un setup de DEL RGB vraiment sick.
 
-Nous allons rendre honneur à ce second loup en utilisant un DEL RGB.
+Nous allons rendre honneur à ce second loup en utilisant une DEL RGB.
 
 <img src="img/Pasted image 20260902144527.png" width="600" />
 
@@ -115,6 +115,8 @@ Expérimentez avec les interrupteurs et le bouton et identifiez quelle patte con
 #### Exercice 5.2
 
 Ajustez votre circuit et programmez votre esp de sorte à ce votre DEL RGB change de couleur à chaque seconde dans l'ordre suivant : rouge -> vert -> bleu.
+
+Vous allez devoir utiliser un GPIO en OUTPUT par couleur.  Lorsque le GPIO est à low, il va faire office de 'sink' pour le courant de la DEL et compléter le circuit. 
 
 #### Exercice 5.3
 
