@@ -30,6 +30,21 @@ Ensuite, faites le sur votre platine d'essai et programmez votre ESP.
 
 ## Exercice 3
 
+Nous allons reprendre avec un exercice similaire à l'[Exercice 1 des exercices précédents](./1_ex_intro_esp.md#exercice-1). 
+
+Nous allons toute fois changer la logique un peu : 
+
+<img src="img/Pasted image 20260915145709.png" width="500" />
+
+Nous allons aussi ajouter un bouton poussoir accompagner d'une DEL bleue pour demander un passage piéton. 
+
+Lorsque quelqu'un appuie sur le bouton :
+- la DEL bleue s'allume pour indiquer qu'un piéton à demander à traverser.
+- Lorsque la lumière rouge s'allume, faire clignoter la lumière bleue pendant 5 secondes pour indiquer aux piétons qu'il est sécuritaire de traverser.
+- Une fois le passage piéton terminé, continuer le cycle normalement. 
+
+## Exercice 4
+
 Nous allons reprendre à partir de l'[Exercice 5.3 des exercices précédents](./1_ex_intro_esp.md#exercice-53)
 
 Cette fois ci, nous allons vouloir deux animations différentes ainsi qu'un interrupteur qui nous permette d'identifier quelle animation jouer.
@@ -40,7 +55,8 @@ Lorsque nous changeons d'animation :
 - Finalement, on commence la nouvelle animation du début.
 
 N'oubliez pas de gérer le cas où on change la position de l'interrupteur avant que la séquence d'amorce ne soit complétée. Dans cette situation, nous voulons recommencer la séquence d'amorce.
-## Exercice 4
+
+## Exercice 5
 
 Nous allons faire un piano à 3 touches. 
 - Les touches vont générés les notes E4(330Hz),  G4 (392Hz), et A4 (440Hz)
@@ -54,6 +70,10 @@ Le schéma suivant est une approximation du circuit que vous avez à faire :
 - Une grosse erreur est répétée. Identifiez cette erreur et corrigez là.
 - Je n'ai pas porté attention aux broches utilisées. Validez qu'elles sont correctes pour vos besoins.
 - Une seule note peut être jouée à la fois.
+
+
+
+
 
 
 
