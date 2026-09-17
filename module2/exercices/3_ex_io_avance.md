@@ -79,6 +79,46 @@ Outre le manque d'hystérésis, ce circuit n'accompli pas entièrement sa foncti
 
 ## Exercice 4
 
+Nous allons créer un petit jeu de réflexe!
+
+Matériel :
+- 3 DELs vertes : Ces DELs représentent les points du joueur.
+- 3 DELS rouges : Ces DELs représentent les vies du joueur.
+- 1 DEL bleue : L'indicateur d'action.
+- 1 bouton : Le bouton sur lequel le joueur doit appuyer.
+
+L'objectif du jeu :
+- Une lumière va s'allumer temporairement à intervalle irrégulier.
+- Le joueur doit appuyer sur le bouton le plus rapidement possible après son activation.
+	- Si le bouton est appuyé assez rapidement, il gagne 1 point.
+	- Si le bouton est appuyé en avance OU trop en retard, il perd une vie.
+- Lorsque le joueur gagne 3 points, il gagne la partie.
+- Lorsque les vies du joueur tombent à 0, il perd la partie.
+- Le joueur commence avec 3 vies.
+
+Au départ : toutes les lumières clignotent quelques secondes avant de se stabiliser sur leur état de départ.
+
+Sur victoire :
+	- Éteindre toutes les lumières
+	- Faire clignoter les lumières vertes pendant quelques secondes. 
+	- Éteindre toutes les lumières pendant un court moment. 
+	- Recommencer le jeu.
+Sur défaite : la même procédure qu'en cas de victoire, mais on fait clignoter les lumières rouges à la place des vertes.
+
+Voici un exemple de ce à quoi pourrait représenter le jeu à la fin : 
+
+<img src="img/Pasted image 20260917104839.png" width="800" />
+
+## Exercice 4.1
+
+Sur KiCad, produisez le schéma de circuit à réaliser.
+
+## Exercice 4.2
+
+Maintenant, réalisez le sur votre platine d'essaie. Programmez votre ESP avec la logique demandée.
+
+## Exercice 5
+
 Ajoutons nous un nouveau composant super simple d'utilisation : le shift register!
 
 <img src="img/Pasted image 20260915150249.png" width="800" />
@@ -164,7 +204,7 @@ On `latch()`
 |---| ---| --- | - | - | - |- | - |
 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
 
-### Exercice 4 - Pour de vrai maintenant
+### Exercice 5 - Pour de vrai maintenant
 
 Nous allons faire un circuit simple dans lequel 4 DELs sont contrôlées par notre shift register.
 
@@ -206,7 +246,7 @@ void latch() {
 
 >[!important] Vous aurez potentièlement besoin d'ajouter des délaies.
 
-### Exercice 5
+### Exercice 6
 
 Il est commun d'utiliser des masques de bits pour contrôller l'état des registres du 74HC595. 
 
