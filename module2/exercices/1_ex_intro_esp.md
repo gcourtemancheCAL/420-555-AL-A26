@@ -48,6 +48,8 @@ void loop() {
 
 **Question :** Avant de reproduire le circuit, décrivez ce qu'il fait.
 
+**Question :** En sachant que le buzzer nécessite une tension de 5V en entrée et qu'il consomme environ 40mA, est-ce qu'on pourrait déplacé le transistor avant sa borne positive? Pourquoi?
+
 Ensuite, reproduisez le circuit et flashez le esp avec le code fournit.
 
 ### Exercice 3.2
@@ -71,6 +73,13 @@ Voici un schéma des branchements recommendés provenant du manufacturier :
 Corrigez votre circuit afin de respecter ce schéma en tenant compte des éléments suivants :
 - Dans le schéma, votre ESP8266 est la source d'oscillation (connecté à la base du transistor)
 - Votre potentiomètre est la résistance entre la source d'oscillation et la base du transistor.
+- Utilisez une valeur de résistance de 10kΩ pour `R*`.
+
+**Courte explication sur l'utilité de `R*` :**
+
+Un buzzer piezoélectrique fonctionne en chargeant et déchargeant électriquement une membrane. Cette membrane se tend et se relâche selon la charge électique. L'oscillation de notre ESP8266 cause donc un effet de tension et de relâchement dans la membrane, créant des vibrations dans l'air à une certaine fréquence (i.e. du son).  L'effet inverse est vrai : lorsqu'on tend et relâche la membrane, elle génère un courant électrique. 
+
+Lorqu'on désactive le transitor, il n'y a plus de chemin vers le GND laissant le buzzer dans un état indéfini - physiquement et électriquement. L'impact étant que la tension au collecteur du transistor devient incertaine. La résistance R* donne un chemin alternatif vers le 5V, ce qui tire la tension en C vers 5V - nous permettant d'avoir des comportements plus fiables et prévisibles.
 
 ## Exercice 4
 
