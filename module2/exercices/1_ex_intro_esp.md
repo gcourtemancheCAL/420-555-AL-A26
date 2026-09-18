@@ -62,6 +62,16 @@ Reproduisez le schéma du circuit et modifiez le de sorte à ce que le tonalité
 
 Testez votre schéma sur votre platine d'essaie.
 
+### Exercice 3.4
+
+Voici un schéma des branchements recommendés provenant du manufacturier :
+
+<img src="img/Pasted image 20260918070704.png" width="600" />
+
+Corrigez votre circuit afin de respecter ce schéma en tenant compte des éléments suivants :
+- Dans le schéma, votre ESP8266 est la source d'oscillation (connecté à la base du transistor)
+- Votre potentiomètre est la résistance entre la source d'oscillation et la base du transistor.
+
 ## Exercice 4
 
 À partir du code suivant : 
