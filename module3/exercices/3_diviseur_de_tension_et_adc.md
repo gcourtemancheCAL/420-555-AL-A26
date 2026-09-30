@@ -19,6 +19,7 @@ Une fois fait, calculez la tension en 2 (V_out) du circuit suivant lorsque la r�
 <img src="img/Pasted image 20260929134028.png" width="400" />
 
 >[!warning] Pour calculer la tension en 2, il faut aussi considérer les éléments qui suivent. Dans ce cas ci, il va falloir calculez la résistance totale en tenant compte du 1kΩ suivant. Vous pouvez utiliser le schéma suivant pour réaliser vos calculs. Avec les paramètres donnés, ils sont fonctionellement équivalents.
+>
 > <img src="img/Pasted image 20260929134008.png" width="400" />
 
 ### Exercice 1.3
@@ -28,6 +29,7 @@ Maintenant, calculez la tension en 2 pour ce circuit en considérant les mêmes 
 <img src="img/Pasted image 20260929121425.png" width="400" />
 
 >[!warning] Maintenant qu'il y a une DEL dans le chemin, on ne peut pas simplement calculer la résistance équivalente. Il va falloir sortir notre loi d'Ohm et nos muscles algébriques. La simplification suivante du circuit s'applique tout de même : 
+>
 > <img src="img/Pasted image 20260929134601.png" width="400" />
 
 ## Exercice 2
