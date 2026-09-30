@@ -165,7 +165,7 @@ Comme un transistor, un relais nous permet de contrôler l'actuation d'un interr
 **En différence d'un transistor :** 
 - Le fonctionnement est mécanique.
 - Le courant traversant A1 et A2 peut être entièrement disocié du courant traversant le 11 et 12/14.
-- Un relais peut contrôler une charge beaucoup plus élevé. En fait, nos relais supportent une charge allant jusqu'à 3 ampères (vs 500mA pour nos S8050)!
+- Un relais peut contrôler un courant et une tension beaucoup plus élevé. En fait, nos relais supportent un courant allant jusqu'à 3 ampères pour une tension de 30V DC (vs 500mA pour nos S8050)!
 
 ### Exercice 4.4.1 - Tester le HK4100F
 
@@ -202,6 +202,10 @@ Appuyer sur le bouton devrait changer la DEL qui s'allume. Vous devriez entendre
 <img src="img/Pasted image 20260930124849.png" width="300" />
 
 **Vidéo du circuit:**
+
+<a href="./video/relais.mp4"> Liens si le vidéo n'apparait pas directement</a>
+
+[Liens si le vidéo n'apparait pas directement](./video/relais.mp4)
 
 <video controls width="800">
 	<source src="video/relais.mp4">
