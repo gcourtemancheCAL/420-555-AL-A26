@@ -1,4 +1,4 @@
-# Exercies diviseur de tension et ADC
+# Exercies - Diviseur de tension et ADC
 
 ## Exercice 1
 
@@ -38,18 +38,18 @@ Nous allons vouloir créer un système d'éclairage automatique en utilise une p
 
 <img src="img/Pasted image 20260929150921.png" width="400" />
 
-Matériel requis : 
+**Matériel requis :** 
 - Une photorésistance
 - Une résistance de 1kΩ
 - Une résistance de 220Ω
 - Une DEL
 - Votre ESP32
 
-Les branchements : 
+**Les branchements :** 
 - Une broche en INPUT connectée à un diviseur de tension créé à l'aide de votre photorésistance et de votre résistance de 1kΩ.
 - Une borche en sortie contrôlant l'intensité de la DEL connectée en série avec la résistance de 220Ω.
 
-L'objectif du système : plus il fait noir, plus l'illumination de la DEL est intense.
+**L'objectif du système :** L'ESP32 va lire une mesure de luminosité et allumer une DEL en conséquence. Plus il fait noir, plus l'illumination de la DEL est intense.
 
 ### Exercice 2.1
 
@@ -59,7 +59,7 @@ Commencez par déterminer comment la valeur de résistance de la photorésistanc
 
 Faites un schéma KiCAD du circuit final que vous allez réaliser. 
 
-La photorésistance va être votre première ou deuxième résistance? Pourquoi?
+**Question :** La photorésistance va être votre première ou deuxième résistance? Pourquoi?
 
 ### Exercice 2.3
 
@@ -72,11 +72,42 @@ Calculez la tension de sortie de votre diviseur de tension lorsque la photorési
 
 Réalisez le circuit et programmez le ESP32.
 
-Vous allez probablement devoir faire une ronde de calibration pour vous ajuster aux valeurs réels de votre environnement de test.
+Vous allez probablement devoir faire une ronde de calibration pour vous ajuster aux valeurs réels obtenues dans votre environnement de test.
 
 ## Exercice 3
 
-Exercice avec joystick
+### Le joystick
+
+<img src="img/Pasted image 20260930143109.png" width="300" />
+
+**Branchements du joystick :** 
+- Le GND se connecter au GND de votre ESP32
+- On branche l'alimentation au 3.3V de votre ESP32.
+- VRX, VRY, et SW se branchent sur des GPIO en mode lecture
+
+ >[!important] : même s'il est écrit 5V sur votre joystick, on veut le brancher au 3.3V.
+
+VRX et VRY sont les broches de sorties de deux potentiomètres : la tension en VRX et VRY ca s'ajuster selon la position du joystick.
+
+SW est un bouton complètement ordinaire inclu dans votre joystick.
+
+### Exercice 3.1
+En utilisant le joystick faisant parti de votre trousse, reproduisez le circuit suivant : 
+
+[Liens si le vidéo n'apparait pas directement](./video/joystick.mp4)
+
+<video controls width="800">
+	<source src="./video/joystick.mp4">
+</video>
+
+Vous remarquerez que les 4 DELs représentent chacune l'une des directions cardinales et qu'elles s'allument lorsque le joystick est tiré dans cette direction.
+### Exercice 3.2
+
+Ajoutez un klaxon à l'aide d'un buzzer passif. Le klaxon doit s'actionner tant que le bouton du joystick est enfoncé.
+
+Gardez en tête le circuit recommendé par le manufacturié : 
+
+<img src="img/Pasted image 20260918070704.png" width="600" />
 
 ## Exercice 4
 
@@ -100,7 +131,7 @@ Nous allons ensuite connecter un diviseur de tension composé de notre thermisto
 > - Ne **jamais** faire et défaire des branchements pendant que vos équipements sont alimentés.
 > - Assurez-vous de respecter à la lettre les schémas fournis.
 > - Assurez-vous que les branchements en séries sont réellement en séries.
-> - Ne connectez **jamais** votre moteur directement à l'un des GPIO des votre ESP32.
+> - Ne connectez **jamais** votre moteur directement à votre ESP32.
 
 >[!danger] Cet exercice va combiner 2 sources d'alimentation distinctes : l'alimentation 5V USB et l'alimentation 5V provenant de votre bloc d'alimentation. **Vous allez devoir connecter le GND du ESP au GND du power supply**.
 
@@ -120,6 +151,13 @@ Nous allons remplacer la DEL bleue par un moteur qui s'allume lorsqu'il fait cha
 **Schéma du circuit :** 
 
 <img src="img/Pasted image 20260929180049.png" width="700" />
+
+**Le circuit complété :**
+
+<img src="img/Pasted image 20260930142355.png" width="600" />
+
+**Précision sur le circuit :**
+- Le GND du ESP32 (le fil blanc) est connecté au GND du bloc d'alimentation (via le fil jaune)
 
 ### Diode flyback (i.e. explication sur la diode weird)
 
@@ -142,9 +180,11 @@ Lorsque l'on éteint l'alimentation du moteur, elle va fourir un chemin de retou
 
 ### Exercice 4.4 - Moteur contrôlé par un relais
 
+>[!attention] Cet exercice est beaucoup plus complexe que le précédent. Il est aussi considéré comme optionel.
+
 En réalité le moteur peut demander un courant qui dépasse ce que votre transistor peut fournir. C'est d'autant plus vrai si l'on commence à mettre de la résistance sur la tige rotative du moteur. Plusieurs modèles de BJT pourraient supporter notre moteur ou on pourrait aussi utiliser transistor de type MOSFET.
 
-On va utiliser un autre composant qui est typiquement utiliser pour contrôler des tension et des charges élevés : le relai.
+On va utiliser un autre composant : le relais.
 
 #### Le relais
 
@@ -173,7 +213,7 @@ Reproduisez le circuit suivant afin de tester les branchements avec le HK4100F :
 
 <img src="img/Pasted image 20260929194851.png" width="400" />
 
-Appuyer sur le bouton devrait changer la DEL qui s'allume. Vous devriez entendre un _click_ lorsque l'aimant s'active.
+Appuyer sur le bouton devrait changer la DEL qui s'allume. Vous devriez entendre un [_clique_](https://youtu.be/zhl-Cs1-sG4?t=95) lorsque l'aimant s'active.
 
 ### Exercice 4.4.2 - Le vrai circuit. Vous êtes prêt?
 
@@ -194,16 +234,13 @@ Appuyer sur le bouton devrait changer la DEL qui s'allume. Vous devriez entendre
 - Le ESP32 contrôle la base du transistor via un GPIO. Le signal provient du fil orange et traverse les deux résistances de 220 ohm en série.
 - La diode de flyback est directement au dessus du relais - c'était plus compact comme ça.
 - On voit mal le snubber RC sur cette photo.
-- Mon moteur est déffectueux. J'ai donc ajouté un DEL en parallèle (la DEL verte) au moteur pour mieux visualiser le comportement du relais. 
-- J'ai pris beaucoup d'espace sur la platine pour essayer de rendre le circuit un peu plus lisible. Si vous avez de la difficulté à l'aborder, suivez une chose à la fois.
+- Mon moteur est déffectueux. J'ai donc ajouté une DEL en parallèle (la DEL verte) au moteur pour mieux visualiser le comportement du relais. 
 
 **On voit mieux le snubber RC sur cette photo :** 
 
 <img src="img/Pasted image 20260930124849.png" width="300" />
 
 **Vidéo du circuit:**
-
-<a href="./video/relais.mp4"> Liens si le vidéo n'apparait pas directement</a>
 
 [Liens si le vidéo n'apparait pas directement](./video/relais.mp4)
 

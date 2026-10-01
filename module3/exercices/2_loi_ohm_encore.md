@@ -1,4 +1,4 @@
-
+# Exercices - Calculs loi d'Ohm
 # Exercice 1 
 
 <img src="img/Pasted image 20260924150826.png" width="400" />
