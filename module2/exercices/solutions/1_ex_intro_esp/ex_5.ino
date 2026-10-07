@@ -1,8 +1,9 @@
 namespace ex_5 {
 
-Pin pinRed = Pin::D1,
-    pinGreen = Pin::D5,
-    pinBlue = Pin::D6;
+const Pin
+  pinRed = Pin::D1,
+  pinGreen = Pin::D5,
+  pinBlue = Pin::D6;
 
 void setup() {
   pinMode(pinRed, OUTPUT);

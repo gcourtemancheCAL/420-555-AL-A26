@@ -1,13 +1,14 @@
 namespace ex_1 {
 
-Pin pinRed = Pin::D1,
-    pinYellow = Pin::D6,
-    pinGreen = Pin::D5;
+const Pin
+  pinRed = Pin::D1,
+  pinYellow = Pin::D6,
+  pinGreen = Pin::D5;
 
 void setup() {
   pinMode(pinRed, OUTPUT);
-  pinMode(pinGreen, OUTPUT);
   pinMode(pinYellow, OUTPUT);
+  pinMode(pinGreen, OUTPUT);
 }
 
 void loop() {

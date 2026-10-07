@@ -13,7 +13,7 @@ const int sing_along_song[][2] = {
 	{220, 182},
 	{247, 364},
 	{262, 364},
-	{0, 1000} // pause
+	{0, 1000} // pause de 1s
 };
 
 void setup() {
