@@ -58,13 +58,13 @@ Les DELs d'index servent à indiquer quelle séquence est en train de jouer :
 
 Créez les tasks suivantes : 
 - `led_ctrl_task` : Fait jouer en boucle la séquence de clignotement choisie.
-- `buzzer_ctrl_task` : Fait jouer en boucle la contrôle la chanson jouer sur le buzzer selon la séquence choisie
+- `buzzer_ctrl_task` : Fait jouer en boucle la chanson choisie sur le buzzer selon la séquence choisie
 
 Lorsqu'on appuie sur le bouton, la séquence choisie passe à la suivante en respectant les règles suivantes :
 - Les DELs d'index sont mises à jour.
-- Les DELs de clignotement s'éteigne.
+- Les DELs de clignotement s'éteignent.
 - Le buzzer s'arrête.
-- Suivante une pause de 1 seconde, la nouvelle séquence choisie commence à jouer.
+- Suivant une pause de 1 seconde, la nouvelle séquence choisie commence à jouer.
 
 Utilisez les outils de synchronization apropriés afin de garantir le bon fonctionnement de votre programme.
 
