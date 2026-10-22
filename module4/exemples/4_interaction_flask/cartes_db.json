@@ -1,0 +1,18 @@
+[
+    {
+        "question": "Bonjour",
+        "reponse": "Guten Tag"
+    },
+    {
+        "question": "Au revoir",
+        "reponse": "Auf Wiedersehen"
+    },
+    {
+        "question": "Chien",
+        "reponse": "Hund"
+    },
+    {
+        "question": "Merci",
+        "reponse": "Danke"
+    }
+]

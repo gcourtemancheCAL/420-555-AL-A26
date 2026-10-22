@@ -1,0 +1,22 @@
+<html lang = "fr">
+<head>
+    <meta charset = "UTF-8">
+    <title> Bienvenue! </title>
+</head>
+<body>
+    <h1>Bienvenue sur ma page V3!</h1>
+    <p> Page de démonstration pour le cours 420-555.
+    </p>
+    <img src = "static/flasklogo.png">
+    <h2>Cartes mémoire</h2>
+    <ul>
+        {% for carte in cartes %} <!-- cartes vient de cartes_memoire.py -->
+        <li>
+            <a href="{{url_for('vue_carte',index = loop.index0)}}">
+                {{carte.question}}
+            </a>
+        </li>
+        {% endfor %}
+     </ul>
+</body>
+</html>

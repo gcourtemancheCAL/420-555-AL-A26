@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "fr">
+<head>
+    <meta charset = "UTF-8">
+    <title> Cartes mémoires </title>
+</head>
+<body>
+    <h1>Carte</h1>
+    Question: {{carte.question}} <br>
+    Réponse: {{carte.reponse}}
+    <p>
+        <a href = "/"> Bienvenue</a>
+        <br>
+        <button>
+        {% if i < max_index %} <!-- syntaxe ninja -->
+            <a href = "{{url_for('vue_carte', index = i + 1)}}">
+                Carte suivante
+            <a/>
+         {% else %} 
+            <a href = "{{url_for('vue_carte', index = 0)}}">
+                On recommence
+            <a/>         
+         {% endif %} 
+        </button>
+    </p>
+</body>
+</html>
