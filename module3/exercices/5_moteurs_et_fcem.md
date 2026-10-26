@@ -90,7 +90,7 @@ Lorsque l'on éteint l'alimentation du moteur, elle va fourir un chemin de retou
 
 >[!attention] Dès qu'il est question de moteur ou de _coil_, il faut penser à gérer les charges inductives. L'utilisation d'une diode de flyback est l'un des moyens les plus simples.
 
-### Exercice 4 - Moteur contrôlé par un relais
+## Exercice 4 - Moteur contrôlé par un relais
 
 >[!attention] Cet exercice est beaucoup plus complexe que le précédent. Il est aussi considéré comme optionel.
 
