@@ -12,8 +12,17 @@
 
 ## Installation du Pi
 
-TODO
+https://www.raspberrypi.com/software/
 
+![[Capture d’écran 2026-10-13 122031.png]]
+
+![[Capture d’écran 2026-10-13 122110.png]]
+
+![[Capture d’écran 2026-10-13 122134.png]]
+
+![[Capture d’écran 2026-10-13 122310.png]]
+
+![[Capture d’écran 2026-10-13 122405.png]]
 ## Travailler sur le Pi
 
 ### Option 1 - Comme un ordinateur
