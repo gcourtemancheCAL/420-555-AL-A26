@@ -12,17 +12,28 @@
 
 ## Installation du Pi
 
-https://www.raspberrypi.com/software/
+### Insertion de la carte microSD dans le pi
 
-![[Capture d’écran 2026-10-13 122031.png]]
+<img src="img/Pasted image 20261028110833.png" width="600" />
 
-![[Capture d’écran 2026-10-13 122110.png]]
+### Adapteur MicroSD : 
 
-![[Capture d’écran 2026-10-13 122134.png]]
+<img src="img/Pasted image 20261028110400.png" width="600" />
 
-![[Capture d’écran 2026-10-13 122310.png]]
+### Flasher l'image sur la carte microSD
 
-![[Capture d’écran 2026-10-13 122405.png]]
+Raspeberry pi imager : https://www.raspberrypi.com/software/
+
+<img src="img/Capture d’écran 2026-10-13 122031.png" width="600" />
+
+<img src="img/Capture d’écran 2026-10-13 122110.png" width="600" />
+
+<img src="img/Capture d’écran 2026-10-13 122134.png" width="600" />
+
+<img src="img/Capture d’écran 2026-10-13 122310.png" width="600" />
+
+<img src="img/Capture d’écran 2026-10-13 122405.png" width="600" />
+
 ## Travailler sur le Pi
 
 ### Option 1 - Comme un ordinateur
