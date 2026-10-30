@@ -4,7 +4,7 @@ Réalisez ces exercices sur le ESP32.
 
 ## Exercice 1
 
-Faites un circuit simple dans lequel vous allez connecter 3 DELs à différent GPIO de votre ESP32.
+Faites un circuit simple dans lequel vous allez connecter 3 DELs à différent GPIO de votre ESP32. Les DELs vont devoir clignoter en parallèle.
 
 ### Exercice 1.1
 
