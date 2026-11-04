@@ -179,10 +179,10 @@ class ServerCallbacks : public BLEServerCallbacks {
 public:
 	ServerCallbacks(){}
 	virtual ~ServerCallbacks(){}
-	virtual void onConnect(BLEServer *pServer){
+	void onConnect(BLEServer *pServer) override{
 		// On ne fait rien ici.
 	}
-	virtual void onDisconnect(BLEServer *pServer){
+	void onDisconnect(BLEServer *pServer) override{
 		pServer->getAdvertising()->start();
 	}
 };
@@ -204,7 +204,6 @@ void setup() {
 }
 
 ```
-
 
 ### Characteristics Callbacks
 
@@ -252,5 +251,135 @@ void setup() {
 	
 	// ...
 }
+```
+
+### Exemple 2 - Notification
+
+Dans cet exemple, le périphérique BLE envoie des notifications lorsque la valeur de la caractéristique change. Ces notifications permettent d'éviter de devoir _poll_ le changement d'état continuellement.
+
+**Code ESP32 :**
+
+```arduino
+#include <BLEDevice.h>
+#include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
+
+constexpr int BUTTON_PIN = 23;
+constexpr char SERVICE_UUID[] = "df0a1236-f7ce-4f49-8ca1-3677b84b58c0";
+constexpr char BUTTON_UUID[] = "563a715c-d3c5-4817-9e6d-ee6aec89e223";
+
+BLECharacteristic* buttonChar;
+
+class ServerCallbacks : public BLEServerCallbacks {
+	void onConnect(BLEServer* server) override {
+	}
+
+	void onDisconnect(BLEServer *pServer) override{
+		pServer->getAdvertising()->start();
+	}
+};
+
+void setupBLE() {
+	BLEDevice::init("Notification bouton");
+	
+	BLEServer* server = BLEDevice::createServer();
+	server->setCallbacks(new ServerCallbacks());
+	
+	BLEService* service = server->createService(SERVICE_UUID);
+	buttonChar = service->createCharacteristic(
+		BUTTON_UUID,
+		BLECharacteristic::PROPERTY_READ |
+		BLECharacteristic::PROPERTY_NOTIFY );
+
+	// Permet au client de se connecter aux notifications.
+	buttonChar->addDescriptor(new BLE2902());
+	buttonChar->setValue(0);
+	service->start();
+	
+	BLEAdvertising* advertising = BLEDevice::getAdvertising();
+	advertising->addServiceUUID(SERVICE_UUID);
+	advertising->setScanResponse(true);
+	advertising->start();
+}
+
+void setup() {
+	Serial.begin(115200);
+	pinMode(BUTTON_PIN, INPUT_PULLUP);
+	setupBLE();
+}
+
+void loop() {
+	static bool last_v = false;
+	bool v = digitalRead(BUTTON_PIN);
+	
+	// Pas de changement. On sleep et on quitte.
+	if( v == last_v ) {
+		delay(50);
+		return;
+	}
+	
+	// Confirme la valeur (debounce)
+	delay(30);
+	if( v == digitalRead(BUTTON_PIN) ) {
+		last_v = v;
+		buttonChar->setValue((int)v);
+		buttonChar->notify();
+		delay(5);
+	}
+}
+```
+
+**Code Pi :**
+
+```python
+import asyncio
+
+from bleak import BleakClient, BleakScanner
+from bleak.exc import BleakError
+
+DEVICE_NAME = "Notification bouton"
+BUTTON_UUID = "563a715c-d3c5-4817-9e6d-ee6aec89e223"
+
+# callback lorsque l'etat du bouton change.
+def on_button_change(characteristic, data):
+	# NB : J'envoie un message de 4 byte avec mon ESP (int), mais BLE est
+	# small endian donc le toggle on/off se trouve dans le premier octet recu.
+    btn = "ON" if data[0] == 0 else "OFF"
+    print(f"Bouton : {btn}")
+
+# Bleak utilise des appels asynchrone. La chaine d'appel doit donc
+# etre async.
+async def main():
+    print(f"Scanning for {DEVICE_NAME}...")
+
+    device = await BleakScanner.find_device_by_filter(
+        lambda device, advertisement: (advertisement.local_name == DEVICE_NAME),
+        timeout=15.0,
+    )
+
+    if device is None:
+        print("Device not found. Check that the ESP32 is advertising.")
+        return
+
+    print(f"Found {device.name} [{device.address}]")
+
+    async with BleakClient(device) as client:
+        print(f"Connected to {device.address}")
+
+        await client.start_notify(BUTTON_UUID, on_button_change)
+
+        print("Listening for button changes. Press Ctrl+C to exit.")
+
+        while True:
+            await asyncio.sleep(1)
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, EOFError):
+        print("\nExiting.")
+    except (BleakError, OSError, asyncio.TimeoutError) as error:
+        print(f"Bluetooth error: {error}")
 ```
 

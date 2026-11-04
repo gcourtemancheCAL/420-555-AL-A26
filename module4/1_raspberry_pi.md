@@ -52,15 +52,10 @@ Visual studio code supporte d'ailleurs un plugin pour le développement remote v
 
 https://www.realvnc.com/en/connect/download/viewer/windows/
 
-## Connection par Wifi
+## Connexion par Wifi
 
-Au Cégep il n'est pas possible de brancher votre RPI au Wifi et ensuite accéder à votre appareil par son adresse IP car les appareils sur le Wifi invité ne peuvent pas se voir
-
->[!important] NOTE POUR MOI ET PAS LES ETUDIANTS : TODO : Je dois setup le AP sans fil. Il va me falloir 4.176 et 4.151... 
-
->[!important] Ici cette approche fonctionnera à votre domicile, mais n'est pas possible sur le WIFI `invité`
-
-### Utilisation du Wifi comme HotSpot
+Utilisez le wifi du labo. Pas invité. Comme ça vos système vont être en mesure de se voir.
+### Utilisation du Pi comme HotSpot
 
 Il est possible de configurer votre RPI pour offrir un Wifi et ainsi vous pouvez vous connecter sur ce Wifi à partir de votre ordinateur et ainsi interagir avec votre PI
 
