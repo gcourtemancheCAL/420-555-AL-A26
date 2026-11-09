@@ -36,6 +36,27 @@ Raspeberry pi imager : https://www.raspberrypi.com/software/
 
 ## Travailler sur le Pi
 
+### Retrouver le Pi sur le réseau
+
+Il va normalement être possible de se connecter au Pi directement via son adresse IP. Pour ce faire, vous allez normalement devoir connecter le Pi à un écran le temps d'identifier son adresse IP.
+
+Ça peut être problématique. Je vous recommanderais donc de vous y connecter via son nom d'hôte. Pour s'assurer que cette option soit fonctionnelle sur le maximum de réseaux possibles, il va falloir désactiver le mode IPv6 dans la configuration du service mDNS de votre pi.
+
+```bash
+	# Sur le pi
+	# Modifiez le fichier /etc/avahi/avahi-daeomon.conf
+	vim /etc/avahi/avahi-daeomon.conf
+	
+	# Désactiver IPv6
+	use-ipv6=no
+	
+	# On sauvegarde et quitte vim
+	<esc><esc>:wq
+	
+	# On redémarre le service avahi
+	sudo systemctl restart avahi-daemon
+```
+
 ### Option 1 - Comme un ordinateur
 
 On peut utiliser le Pi comme un ordinateur régulier. Il suffit alors de le brancher à un écran, un clavier et une souris et puis voila.
