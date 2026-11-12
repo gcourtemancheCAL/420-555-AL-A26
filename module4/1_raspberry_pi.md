@@ -49,6 +49,7 @@ Il va normalement être possible de se connecter au Pi directement via son adres
 	
 	# Désactiver IPv6
 	use-ipv6=no
+	publish-aaaa-on-ipv4=no
 	
 	# On sauvegarde et quitte vim
 	<esc><esc>:wq
