@@ -30,11 +30,13 @@ Flask utilise notamment :
 - **Werkzeug** : pour le HTTP
 - **Jinja2** : pour les templates
 
+API : https://flask.palletsprojects.com/en/stable/api/
+
 ## Une première application
 
 La fonction `bienvenue()` est maintenant associée au répertoire racine  de l'application.
 
-```
+```python
 # cartes_memoire.py
 
 from flask import Flask
@@ -95,7 +97,7 @@ http://192.168.16.1:5000/
 
 ## Un ajout en mode développement
 
-```
+```python
 # cartes_memoire.py
 
 from flask import Flask
@@ -109,6 +111,11 @@ def bienvenue():
 @app.route("/bonjour")  # le nom de la fonction peut != URL
 def bonjour():
     return "<h2>Bonjour!</h2>"
+    
+@app.route("/json")  
+def data():
+	# retourner un dictionaire va automatiquement retourner un json comme reponse
+    return { "key" : "value", "wow": "much" }
 ```
 
 **Notez la recharge automatique en mode DEBUG!**
@@ -127,6 +134,7 @@ L'application possède notamment les routes suivantes :
 /static/<filename>  -> static
 /                   -> bienvenue
 /bonjour            -> bonjour
+/json               -> data
 ```
 
 Flask associe donc chaque URL définie avec app.route(...) à une  fonction Python.

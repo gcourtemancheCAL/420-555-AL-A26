@@ -16,12 +16,12 @@ Les informations présentées par un périphérique sont structurées en **servi
 
 Le ESP32 supporte une stack Bluetooth BLE. Nous allons nous en servir comme _périphérique BLE_. 
 
-Ce périphérique va devoir intéragir avec d'autres appareils : 
+Ce périphérique va pouvoir interagir avec d'autres appareils : 
 - Avec votre cellulaire 
 - Avec le pi
 - Avec votre laptop
 
-Bien que l'objectif final est d'écrire une application sur votre Pi qui communique en bluetooth, il existe des clients génériques vous permettant de tester pendant le développement via votre celullaire ou bien même votre ordinateur portable.
+Bien que l'objectif final est d'écrire une application sur votre Pi qui communique en bluetooth, il existe des clients génériques vous permettant de tester pendant le développement via votre cellulaire ou bien même votre ordinateur portable.
 - J'utilise [GATTBrowser for android](https://www.renesas.com/en/document/apn/gattbrowser-android-smartphone-application-instruction-manual-rev102)
 - Ils ont aussi une version Windows (disponible sur Léa)
 
@@ -96,7 +96,7 @@ void loop() {
 
 Je peux maintenant utiliser GATTBrowser pour modifier mon attribut : 
 
-TODO IMAGE
+<img src="img/Pasted image 20261112090749.png" width="600" />
 
 Je pourrais aussi utiliser mon Pi pour m'y connecter et le modifier. 
 
@@ -128,6 +128,7 @@ LED_UUID = "563a715c-d3c5-4817-9e6d-ee6aec89e222"
 async def main():
     print(f"Scanning for {DEVICE_NAME}...")
 
+	# Existent aussi find_device_by_name et find_device_by_address 
     device = await BleakScanner.find_device_by_filter(
         lambda device, advertisement: (
             # On filtre ici sur le nom et le uuid de service publié

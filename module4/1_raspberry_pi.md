@@ -45,7 +45,7 @@ Il va normalement être possible de se connecter au Pi directement via son adres
 ```bash
 	# Sur le pi
 	# Modifiez le fichier /etc/avahi/avahi-daeomon.conf
-	vim /etc/avahi/avahi-daeomon.conf
+	vim /etc/avahi/avahi-daemon.conf
 	
 	# Désactiver IPv6
 	use-ipv6=no
@@ -77,6 +77,7 @@ https://www.realvnc.com/en/connect/download/viewer/windows/
 ## Connexion par Wifi
 
 Utilisez le wifi du labo. Pas invité. Comme ça vos système vont être en mesure de se voir.
+
 ### Utilisation du Pi comme HotSpot
 
 Il est possible de configurer votre RPI pour offrir un Wifi et ainsi vous pouvez vous connecter sur ce Wifi à partir de votre ordinateur et ainsi interagir avec votre PI
