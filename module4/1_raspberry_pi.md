@@ -45,7 +45,7 @@ Il va normalement être possible de se connecter au Pi directement via son adres
 ```bash
 	# Sur le pi
 	# Modifiez le fichier /etc/avahi/avahi-daeomon.conf
-	vim /etc/avahi/avahi-daemon.conf
+	sudo vim /etc/avahi/avahi-daemon.conf
 	
 	# Désactiver IPv6
 	use-ipv6=no
